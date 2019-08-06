@@ -63,10 +63,10 @@ gulp.task('imageMin', function () {
 //Watch sass & serve
 gulp.task('serve', ['sass'], function () {
   browserSync.init({
-    server: './src'
+    server: './'
   });
 
   gulp.watch(['src/scss/**/*.scss'], ['sass']);
-  gulp.watch('src/*.html').on('change', browserSync.reload);
+  gulp.watch('*.html').on('change', browserSync.reload);
   gulp.watch('src/js/**/*.js').on('change', browserSync.reload);
 });
