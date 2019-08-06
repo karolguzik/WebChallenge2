@@ -4,8 +4,20 @@ body {
 }
 
 .heading--primary {
-  font-size: 6rem;
+  font-size: 4rem;
   letter-spacing: .1rem;
+
+  @include forTabletPortrait {
+    font-size: 5rem;
+  }
+
+  @include forLaptop {
+    font-size: 6rem;
+  }
+
+  @include forDesktop {
+    font-size: 5rem;
+  }
 }
 
 .paragraph {

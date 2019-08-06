@@ -14,3 +14,41 @@
 @mixin transition {
   transition: .3s ease;
 }
+
+
+@mixin forSmallPhone {
+  @media (min-width: 320px) and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin forPhone {
+  @media (min-width: 481px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin forTabletPortrait {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+
+@mixin forTabletLandscape {
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin forLaptop {
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin forDesktop {
+  @media (min-width: 1281px) {
+    @content;
+  }
+}

@@ -10,12 +10,25 @@
     @extend .btn;
     padding: 1rem 3rem;
     color: $font-color-gray;
-    font-size: 1rem;
+    font-size: .9rem;
     font-weight: bold;
 
     &:hover {
       background-color: darken($bgc-color-white, 10%);
     }
+
+    @include forTabletPortrait {
+      font-size: 1.2rem;
+    }
+
+    @include forLaptop {
+      font-size: 1.3rem;
+    }
+
+    @include forDesktop {
+      font-size: .9rem;
+    }
+
   }
 
   &--sub {
@@ -30,14 +43,34 @@
   &--play {
     @extend .btn;
     position: absolute;
-    bottom: 27%;
-    right: 20%;
-    width: 9rem;
-    height: 9rem;
+    bottom: 22%;
+    right: 8%;
+    width: 6rem;
+    height: 6rem;
     border-radius: 50%;
     box-shadow: 0 5px 5px 2px rgba(#333, .5);
     @include transition;
 
+    @include forTabletPortrait {
+      width: 8rem;
+      height: 8rem;
+    }
+
+    @include forTabletLandscape {
+      width: 8rem;
+      height: 8rem;
+    }
+
+
+    @include forLaptop {
+      width: 8rem;
+      height: 8rem;
+    }
+
+    @include forDesktop {
+      width: 9rem;
+      height: 9rem;
+    }
 
     &:hover {
       transform: scale(1.03);

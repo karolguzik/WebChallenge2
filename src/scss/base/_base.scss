@@ -8,6 +8,22 @@
 
 html {
   font-size: 62.5%;
+
+  @include forTabletPortrait {
+    font-size: 100%;
+  }
+
+  @include forTabletLandscape {
+    font-size: 60%;
+  }
+
+  @include forLaptop {
+    font-size: 80%;
+  }
+
+  @include forDesktop {
+    font-size: 80%;
+  }
 }
 
 body {

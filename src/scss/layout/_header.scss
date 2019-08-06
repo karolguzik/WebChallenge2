@@ -10,7 +10,11 @@
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
-    clip-path: polygon(0 0, 100% 0, 100% 60%, 0 90%);
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 85%);
+
+    @include forDesktop {
+      clip-path: polygon(0 0, 100% 0, 100% 70%, 0 90%);
+    }
   }
 
   &__overlay {
@@ -19,23 +23,52 @@
     width: 100%;
     height: 80%;
     background-color: $bgc-color-red;
+
+    @include forDesktop {
+      height: 85%;
+    }
   }
 
   &__top {
     @include positionAbs;
     width: 100%;
-    padding: 2rem 3rem;
+    // padding: 2rem 3rem;
     display: flex;
-    justify-content: space-between;
-    align-self: center;
+    flex-direction: column;
+    // justify-content: space-between;
+    // justify-content: space-around;
+    // align-self: center;
+
+    @include forTabletLandscape {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 2rem 3rem;
+    }
+
+    @include forLaptop {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 2rem 3rem;
+    }
+
+    @include forDesktop {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 2rem 3rem;
+    }
   }
 
   .logo {
-    display: flex;
+    padding: 1.5rem 0;
     align-self: center;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: bold;
     text-transform: uppercase;
+
+    @include forTabletPortrait {
+      padding: 3rem 0;
+      font-size: 1.6rem;
+    }
   }
 
   .nav {
@@ -43,19 +76,61 @@
     &__list {
       display: flex;
       align-self: center;
+      justify-content: space-around;
+
+      @include forTabletLandscape {
+        height: 100%;
+      }
+
+      @include forLaptop {
+        height: 100%;
+      }
+
+      @include forDesktop {
+        height: 100%;
+      }
     }
 
     &__item {
       display: flex;
       align-self: center;
 
+
       &:not(:last-child) .nav__link {
-        margin-right: 3rem;
+        @include forTabletLandscape {
+          margin-right: 3rem;
+        }
+
+        @include forLaptop {
+          margin-right: 4rem;
+        }
+
+        @include forDesktop {
+          margin-right: 4rem;
+        }
       }
 
+
       &:last-child .nav__link {
-        padding: 1rem 3rem;
+        padding: .5rem 1rem;
         font-weight: normal;
+
+
+        @include forTabletLandscape {
+          padding: 1rem 2rem;
+        }
+
+        @include forTabletPortrait {
+          padding: 1rem 2rem;
+        }
+
+        @include forLaptop {
+          padding: 1rem 3rem;
+        }
+
+        @include forDesktop {
+          padding: 1rem 3rem;
+        }
       }
 
       &:last-child .nav__link:hover {
@@ -67,10 +142,19 @@
     &__link {
       display: block;
       color: $font-color-white;
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: bold;
       text-transform: uppercase;
       @include transition;
+
+      @include forTabletPortrait {
+        font-size: 1.4rem;
+      }
+
+      @include forLaptop {
+        font-size: 1.4rem;
+      }
+
 
       &:hover {
         color: rgba(199, 43, 43, .5);
@@ -81,15 +165,33 @@
 
   &__content {
     @include positionAbsCenter;
+    width: 90%;
     text-align: center;
-    top: 40%;
+    top: 50%;
   }
 
   &__text {
-    width: 60%;
+    width: 70%;
     margin: 1rem auto 2rem auto;
     color: $color-gray-light;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 1.8;
+
+    @include forTabletPortrait {
+      font-size: 1.4rem;
+    }
+
+    @include forLaptop {
+      font-size: 1.4rem;
+    }
+
+    @include forLaptop {
+      width: 40%;
+    }
+
+    @include forDesktop {
+      width: 30%;
+    }
+
   }
 }
