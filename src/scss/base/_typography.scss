@@ -1,11 +1,13 @@
 body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1rem;
-  color: $color-white;
+  color: $font-color-gray;
 }
 
-.heading--primary {
+.heading-primary {
   font-size: 4rem;
   letter-spacing: .1rem;
+  color: $font-color-white;
 
   @include forTabletPortrait {
     font-size: 5rem;
@@ -20,6 +22,44 @@ body {
   }
 }
 
+.heading-secondary {
+  color: $font-color-black;
+  font-size: 1.9rem;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: .1rem;
+}
+
 .paragraph {
   color: $font-color-gray;
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.text-x {
+  font-size: 5rem;
+}
+
+.text-red {
+  position: relative;
+  color: $font-color-red;
+  color: $font-color-black;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    right: -10%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($bgc-color-red, .7);
+    z-index: -1;
+  }
+}
+
+.text-blue {
+  position: relative;
+  color: $font-color-blue;
+  text-transform: uppercase;
 }

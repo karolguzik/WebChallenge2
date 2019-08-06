@@ -1,0 +1,20 @@
+.welcome {
+  padding: $section-padding;
+}
+
+.box-container {
+  padding: 2rem;
+}
+
+.box {
+  padding: 3rem 1rem;
+}
+
+.welcome__footer {
+  width: 70%;
+  margin: 0 auto 3rem auto;
+  color: $font-color-black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
