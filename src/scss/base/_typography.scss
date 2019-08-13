@@ -28,6 +28,27 @@ body {
   text-align: center;
   line-height: 1.3;
   letter-spacing: .1rem;
+
+  @include forTabletPortrait() {
+    font-size: 2.2rem;
+  }
+
+  @media only screen and (orientation: landscape) {
+    font-size: 2.4rem;
+  }
+
+  @include forTabletLandscape {
+    text-align: left;
+    margin-bottom: 5rem;
+  }
+
+  @include forLaptop {
+    text-align: left;
+  }
+
+  @include forDesktop {
+    text-align: left;
+  }
 }
 
 .paragraph {
@@ -35,6 +56,18 @@ body {
   font-size: 1.4rem;
   text-align: center;
   line-height: 1.6;
+
+  @include forTabletLandscape {
+    text-align: left;
+  }
+
+  @include forLaptop {
+    text-align: left;
+  }
+
+  @include forDesktop {
+    text-align: left;
+  }
 }
 
 .text-x {
